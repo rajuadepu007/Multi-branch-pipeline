@@ -1,21 +1,28 @@
-pipeline {
-    agent any
+pipeline { 
+  
+   agent any
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
+   stages {
+   
+     stage('Install Dependencies') { 
+        steps { 
+           sh 'npm install' 
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
+     }
+     
+     stage('Test') { 
+        steps { 
+           sh 'echo "testing application..."'
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
-}
+      }
+
+         stage("Deploy application") { 
+         steps { 
+           sh 'echo "deploying application..."'
+         }
+
+     }
+  
+   	}
+
+   }
