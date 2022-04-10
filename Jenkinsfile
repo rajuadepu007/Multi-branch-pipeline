@@ -4,9 +4,9 @@ pipeline {
 
    stages {
    
-     stage('Install Dependencies') { 
+     stage('Cloning Git') { 
         steps { 
-           sh 'npm install' 
+           git clone https://github.com/rajuadepu007/Multi-branch-pipeline-node-js.git
         }
      }
      
