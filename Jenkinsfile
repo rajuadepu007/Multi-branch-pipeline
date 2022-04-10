@@ -6,7 +6,7 @@ pipeline {
    
      stage('Cloning Git') { 
         steps { 
-           git branch: 'main', url: 'https://github.com/rajuadepu007/Multi-branch-pipeline-node-js.git'
+           sh 'npm install'
         }
      }
      
