@@ -1,28 +1,21 @@
-pipeline { 
-  
-   agent any
+pipeline {
+    agent any
 
-   stages {
-   
-     stage('Cloning Git') { 
-        steps { 
-           sh 'npm install'
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
         }
-     }
-     
-     stage('Test') { 
-        steps { 
-           sh 'echo "testing application..."'
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
         }
-      }
-
-         stage("Deploy application") { 
-         steps { 
-           sh 'echo "deploying application..."'
-         }
-
-     }
-  
-   	}
-
-   }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
